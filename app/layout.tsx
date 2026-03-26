@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Oswald, Poppins } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/ui/navbar";
+import { LINKS, SOCIALMEDIA } from "@/lib/constants";
+import { Footer } from "@/components/ui/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const oswald = Oswald({
+  weight: "400", // Oswald only has one weight
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-oswald",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const poppins = Poppins({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +32,22 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      data-theme="black"
+      className={`${poppins.variable} ${oswald.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col md:items-center">
+        <div className="w-full md:w-10/12">
+          <header className="sticky top-0 z-50">
+            <Navbar
+              name="Fausto Durazo"
+              links={LINKS}
+              socialMedia={SOCIALMEDIA}
+            />
+          </header>
+          <main>{children}</main>
+        </div>
+        <Footer />
+      </body>
     </html>
   );
 }
