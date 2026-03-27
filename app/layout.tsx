@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/ui/navbar";
 import { LINKS, SOCIALMEDIA } from "@/lib/constants";
 import { Footer } from "@/components/ui/footer";
+import { PageTransition } from "@/components/ui/page-transition";
 
 const oswald = Oswald({
   weight: "400", // Oswald only has one weight
@@ -44,7 +45,7 @@ export default function RootLayout({
               socialMedia={SOCIALMEDIA}
             />
           </header>
-          <main>{children}</main>
+          <main><PageTransition>{children}</PageTransition></main>
         </div>
         <Footer />
       </body>
