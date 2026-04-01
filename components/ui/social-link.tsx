@@ -10,7 +10,7 @@ export const SocialLink = ({
       href={socialMedia.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="btn btn-sm lg:btn-md w-1/2 hover:text-secondary-content"
+      className="btn btn-sm md:btn-md md:w-1/2 hover:text-secondary-content"
     >
       <socialMedia.icon size={20} />
       <span>{socialMedia.name}</span>

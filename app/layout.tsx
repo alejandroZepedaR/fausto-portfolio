@@ -36,7 +36,7 @@ export default function RootLayout({
       data-theme="silk"
       className={`${poppins.variable} ${oswald.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col md:items-center">
+      <body className="min-h-full flex flex-col bg-base-200 md:items-center">
         <div className="w-full md:w-10/12">
           <header className="sticky top-0 z-50">
             <Navbar
