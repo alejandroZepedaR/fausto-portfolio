@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-theme="black"
+      data-theme="silk"
       className={`${poppins.variable} ${oswald.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col md:items-center">
@@ -45,7 +45,9 @@ export default function RootLayout({
               socialMedia={SOCIALMEDIA}
             />
           </header>
-          <main><PageTransition>{children}</PageTransition></main>
+          <main>
+            <PageTransition>{children}</PageTransition>
+          </main>
         </div>
         <Footer />
       </body>

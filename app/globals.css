@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: black;
+  themes: silk --default;
 }
 @theme {
   --font-oswald: var(--font-oswald);
