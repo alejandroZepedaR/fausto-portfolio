@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <div>
       <Introduction />
-      <LandingProjects projects={ALL_PROJECTS} />
-      <ContentTogether />
+      {/* <LandingProjects projects={ALL_PROJECTS} />
+      <ContentTogether /> */}
     </div>
   );
 }

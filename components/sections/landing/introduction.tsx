@@ -1,36 +1,36 @@
 import { LandingSection } from "@/components/ui/landing-section";
-import { SectionHeader } from "@/components/ui/section-header";
-import { WHO_AMI } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
-import { FaFileAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
+import { WorkBrands } from "./work-brands";
+import { FaInstagram } from "react-icons/fa";
+import { SOCIALMEDIA } from "@/lib/constants";
+import { SocialLink } from "@/components/ui/social-link";
+import { WorkSections } from "./work-sections";
 export const Introduction = () => {
   return (
     <LandingSection>
-      <SectionHeader title="WHO IS FAUSTO DURAZO ?" />
-      <div className="flex flex-col items-center justify-center">
-        <div className="flex flex-col md:flex-row md:w-10/12 items-center justify-between ">
-          <aside className="flex md:hidden mb-2">
-            <Image
-              src="/img/Landing/iam_1.avif"
-              alt="Fausto Durazo"
-              width={300}
-              height={400}
-              className="w-full h-auto object-cover"
-            />
-            <Image
-              src="/img/Landing/iam_2.avif"
-              alt="Fausto Durazo"
-              width={300}
-              height={400}
-              className="w-full h-auto object-cover"
-            />
-          </aside>
-          <main className="px-2 md:text-2xl w-full md:w-3/4">
-            <p>{WHO_AMI}</p>
-            <div className="flex space-x-2">
-              <a
+      <div className="flex flex-col items-center justify-center flex-1">
+        <div className="flex flex-col h-full w-full">
+          <section className="flex items-center justify-center">
+            <aside className="absolute bottom-20 z-20">
+              <Image
+                src="/img/Landing/iam_1.avif"
+                alt="Fausto Durazo"
+                width={400}
+                height={500}
+              />
+            </aside>
+            <main className="absolute bottom-30 z-30">
+              <Link className="btn btn-primary" href="/contact">
+                <IoMdMail />
+                Contact Me
+              </Link>
+            </main>
+          </section>
+          <section className="flex flex-col h-full">
+            <header className="flex py-45 text-center justify-center">
+              {/* <a
                 href="/files/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -38,30 +38,29 @@ export const Introduction = () => {
               >
                 <FaFileAlt />
                 Resume
-              </a>
-              <Link href="/contact" className="btn btn-secondary mt-5">
-                <IoMdMail />
-                Contact
-              </Link>
-            </div>
-          </main>
-          <aside className="hidden md:block  md:relative w-full h-125">
-            {/* Image 1 */}
-            <div className="absolute top-0 left-[60%] -translate-x-1/2 w-[45%] z-20 aspect-3/4">
-              <img
-                src="img/Landing/iam_1.avif"
-                className="w-full h-full object-cover rounded-md"
-              />
-            </div>
-
-            {/* Image 2 */}
-            <div className="absolute top-[60%] left-[5%] w-[40%] z-10 aspect-3/4">
-              <img
-                src="img/Landing/iam_2.avif"
-                className="w-full h-full object-cover rounded-md"
-              />
-            </div>
-          </aside>
+              </a> */}
+              <h1 className="text-4xl font-bold">WHO IS FAUSTO DURAZO?</h1>
+            </header>
+            <main className=" flex justify-between">
+              <ul className="w-1/3 flex flex-col items-center text-2xl">
+                <WorkSections />
+              </ul>
+              <aside className="w-1/3 flex flex-col items-center space-y-2">
+                {SOCIALMEDIA.map((socialMedia, i) => (
+                  <div
+                    key={socialMedia.name}
+                    className="animate-fade-in opacity-0 w-full flex justify-center"
+                    style={{ animationDelay: `${i * 120}ms` }}
+                  >
+                    <SocialLink socialMedia={socialMedia} />
+                  </div>
+                ))}
+              </aside>
+            </main>
+          </section>
+          <section className="mt-auto w-full mb-20">
+            <WorkBrands />
+          </section>
         </div>
       </div>
     </LandingSection>

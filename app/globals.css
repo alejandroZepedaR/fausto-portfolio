@@ -2,6 +2,19 @@
 @plugin "daisyui" {
   themes: silk --default;
 }
+@keyframes carousel-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.carousel-scroll {
+  animation: carousel-scroll 12s linear infinite;
+}
+
 @theme {
   --font-oswald: var(--font-oswald);
   --font-sans: var(--font-poppins);
@@ -17,4 +30,5 @@
       translate: 0 0;
     }
   }
+
 }
